@@ -1,5 +1,5 @@
 import express, { response } from "express";
-import { PORT, mongoDBURL } from "./config.js";
+import { mongoDBURL } from "./config.js";
 import cors from "cors";
 import booksRoute from "./routes/booksRoute.js";
 import mongoose from "mongoose";
@@ -14,6 +14,8 @@ app.use(express.json());
 // 		allowedHeaders: ["Content-Type"],
 // 	})
 // );
+
+const PORT = process.env.PORT || 5555;
 app.use(cors());
 app.use("/books", booksRoute);
 app.get("/", (request, response) => {
