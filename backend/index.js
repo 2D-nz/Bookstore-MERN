@@ -7,13 +7,13 @@ import mongoose from "mongoose";
 const app = express();
 app.use(express.json());
 
-// app.use(
-// 	cors({
-// 		origin: "http://localhost:5173",
-// 		methods: ["GET", "POST", "PUT", "DELETE"],
-// 		allowedHeaders: ["Content-Type"],
-// 	})
-// );
+app.use(
+	cors({
+		origin: "https://bookstore-mern-ogq8-b8457xaho-2d-nz.vercel.app",
+		methods: ["GET", "POST", "PUT", "DELETE"],
+		allowedHeaders: ["Content-Type"],
+	})
+);
 
 const PORT = process.env.PORT || 5555;
 app.use(cors());
